@@ -18,7 +18,7 @@ print(CONNECTION_STRING)
 ## Update assignment var
 # Load connection info
 conn_str = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
-CONTAINER_NAME = os.getenv("IMAGES_CONTAINER", "images-demo")
+CONTAINER_NAME = os.getenv("IMAGES_CONTAINER", "lanternfly-images")
  
 bsc = BlobServiceClient.from_connection_string(conn_str)
 cc = bsc.get_container_client(CONTAINER_NAME)
@@ -28,7 +28,7 @@ print(f"Container: {CONTAINER_NAME}")
 print("Listing blobs...")
 
 for blob in cc.list_blobs():
-    print(f"https://case007.blob.core.windows.net/{CONTAINER_NAME}/{blob.name}")
+    print(f"https://lanternflyapp123.blob.core.windows.net/{CONTAINER_NAME}/{blob.name}")
  
 # --- flask app ---
 app = Flask(__name__)
